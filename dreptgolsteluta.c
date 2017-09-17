@@ -9,29 +9,31 @@ int main(){
 	scanf("%d", &L);
 	printf("Introdu l: \n");
 	scanf("%d", &l);
-	//primul for va printa liniile orizontale, una cate una, pana se ajunge la latimea dorita
+	//the first for loop will print the horizontal lines, one by one, 
+	//until the desired length l (latimea) is reached
 	for (i = 0; i < l; i ++)
 		{
-			//al doilea for va printa cate un caracter orizontal, unul cate unul, in functie de lungimea dorita
+			//the second for loop will print an horizontal character, one by one, 
+			//depending on the desired L (lungimea) 			
 			for (j = 0; j <= L; j++)
 			{
 				
 				if (i == 0 || i == (l - 1)){
-					//printeaza * daca ne aflam in primul rand al latimii sau daca ne aflam in ultimul rand al latimii
-					//sa arate ca o rama cu margine sus si margine jos
+					//prints * if on the first or last row 
+					//make it look like the rectangle has an upper and a lower starred margin
 					printf("*");
 				} 
 				else if (j == 0 || j == L){
-					//printeaza * daca te aflii a inceputul unui nou rand din latime sau la sfarsitul unui rand din latime
-					//sa inceapa sa arate ca o rama adevarata
+					//prints * if at the first or last position of a new row 
+					//make it look like a real frame
 					printf("*");
 				}
 				else {
-					//printeaza cate un spatiu gol de cate ori nu ne aflam in conditiile de mai sus
+					//it prints an empty space everytime the upper conditions are not met
 					printf(" ");
 				}
 			}
-			//printeaza newline sa poti trece mai departe la urmatorul rand de latime
+			//it prints newline and you can go further in length l (latime)
 			printf("\n");
 		}
 	return 0;

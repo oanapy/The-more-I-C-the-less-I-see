@@ -1,28 +1,30 @@
-/*cum vă rugăm să afișati pe ecran nu triunghi echilateral „plin” format cu ajutorul caracterului *. Lungimea laturii triunghiului va fi introdusă de la tastatură.*/
+/*Print a full triangle with *, depending on the input*/
+
 #include <stdio.h>
 
 int main()
 {
-	int L =  0, i, j;
+	int L, i, j, k;
 
  	printf("Introdu L: \n");
 
  	scanf("%d", &L);
 
- 	for (i = 1; i <= L; i ++)
+ 	for (i = L; i > 0; i--)
  		{
- 			for (j = i; j < L; j++)
+ 			for (j = 1; j < i + 1; j++)
  			{
  				printf(" ");
  						
  			}
- 			for (j = 1; j <= (2 * i -1) ; j++)
+ 			
+ 			for (k = i; k <= L; k++)
  			{
- 				printf("*");
+ 				printf("* ");
  						
  			}
  		printf("\n");
 
- 		}
+ 		} 
  	return 0;
  }

@@ -5,7 +5,7 @@ the main function was called in the terminal*/
 
 int main(int argc, char *argv[])
 {
-	int i = 0;
+	int i;
 
 	if (argc == 1) {
 		printf("You only have one argument.\n");

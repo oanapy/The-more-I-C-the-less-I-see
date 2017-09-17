@@ -1,4 +1,4 @@
-/*Afișați toate numerele divizibile cu 3 mai mici decât un număr intrudus de la tastatură.*/
+/*Print all the numbers divisible by 3 and less than the input number*/
 
 #include <stdio.h>
 
