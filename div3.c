@@ -3,7 +3,8 @@
 #include <stdio.h>
 
 int main(){
-	int nr =  0, i;
+
+	int nr, i;
 	printf("Introdu un numar: \n");
 	scanf("%d", &nr);
 	printf("Numerele divizbile cu 3 mai mici decat %d sunt: ", nr);

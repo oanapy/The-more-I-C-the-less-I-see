@@ -1,3 +1,6 @@
+/*find out the arguments with which 
+the main function was called in the terminal*/
+
 #include <stdio.h>
 
 int main(int argc, char *argv[])
