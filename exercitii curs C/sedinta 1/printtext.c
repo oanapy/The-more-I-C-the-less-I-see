@@ -1,3 +1,5 @@
+/*Scrieți un program care afișează un text la alegere.*/
+
 #include <stdio.h>
 
 void main(){
