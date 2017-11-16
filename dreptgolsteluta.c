@@ -15,7 +15,7 @@ int main(){
 		{
 			//the second for loop will print an horizontal character, one by one, 
 			//depending on the desired L (lungimea) 			
-			for (j = 0; j <= L; j++)
+			for (j = 0; j < L; j++)
 			{
 				
 				if (i == 0 || i == (l - 1)){
