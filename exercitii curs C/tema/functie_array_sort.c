@@ -117,8 +117,5 @@ void main(){
 	sortare_cresc(arr2, nr_el2);
 	printf("Elementele sortate crescator: \n");
 	afisare_elemente(arr2, nr_el2);
-
-	//free(arr);
-
 }
 

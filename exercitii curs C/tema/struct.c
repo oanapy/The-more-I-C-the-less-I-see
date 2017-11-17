@@ -15,40 +15,42 @@ struct PERSOANA {
 
 void sortare_alfabetica(struct PERSOANA* persoana, int n);
 void inainte_1990(struct PERSOANA* persoana, int n);
+void persoaneC(struct PERSOANA* persoana, int n);
 
 void main() {
 
 	int n;
-	printf("cati persoane se introduc? ");
+	printf("Cate persoane se introduc? ");
 	scanf("%d", &n);
 	struct PERSOANA *persoana = malloc(n * sizeof(struct PERSOANA));
 
-	//introducere date
 	int i = 0;
 	for (i = 0; i < n; i++) {
-		printf("\ndatele persoanaului: %d\n", i+1);
-		printf("numele persoanaului: "); 
+		printf("\ndatele personalului: %d\n", i+1);
+		printf("numele personalului: "); 
 		scanf("%s", persoana[i].nume);
-		printf("prenumele persoanaului: "); 
+		printf("prenumele personalului: "); 
 		scanf("%s", persoana[i].prenume);
 		printf("cnp: "); 
 		scanf("%s", persoana[i].CNP);
 	}
 
-	//afisarea datelor celor n persoanai
 	for (i = 0; i < n; i++) {
-		printf("\ndatele persoanaului: %d\n", i+1);
-		printf("numele persoanaului: %s\n", persoana[i].nume);
-		printf("prenumele persoanaului: %s\n", persoana[i].prenume);
+		printf("\ndatele personalului: %d\n", i+1);
+		printf("numele personalului: %s\n", persoana[i].nume);
+		printf("prenumele personalului: %s\n", persoana[i].prenume);
 		printf("cnp: %s\n", persoana[i].CNP);
 		
 		}
 
-	printf("Persoanele sortate in ordine alfaetica dupa nume sunt: \n");
+	printf("Persoanele sortate in ordine alfabetica dupa nume sunt: \n");
 	sortare_alfabetica(persoana, n);
 
 	printf("Persoanele nascute dupa 1990 sunt: \n");
 	inainte_1990(persoana, n);
+
+	printf("Persoanele ale caror nume incep cu C: \n");
+	persoaneC(persoana, n);
 }
 
 void sortare_alfabetica(struct PERSOANA* persoana, int n){
@@ -59,13 +61,19 @@ void sortare_alfabetica(struct PERSOANA* persoana, int n){
  	printf("\n");
 }
 
-void inainte_1990(struct PERSOANA* persoana, int n){
+void inainte_1990(struct PERSOANA* persoana, int n){ //to do - de cautat cum se printeaza anul din CNP
 	int i;
 	for(i = 0; i < n; i++) {
-		printf("%s %s\n", persoana[i].nume, persoana[i].prenume);
+		printf("%s %s %i\n", persoana[i].nume, persoana[i].prenume, persoana[i].CNP[1]);
 	}
-
-
 }
 
-//to do - de cautat cum se printeaza anul din CNP
+void persoaneC(struct PERSOANA* persoana, int n){ 
+	int i;
+	for(i = 0; i < n; i++) {
+		if (persoana[i].nume[0] == 'C') {
+			printf("%s\n", persoana[i].nume);
+		}
+	}
+}
+
