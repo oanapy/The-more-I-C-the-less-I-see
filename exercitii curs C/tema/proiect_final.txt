@@ -1,0 +1,18 @@
+1. Sa se scrie un program in C care gestioneaza cartile unei biblioteci. 
+Pentru aceasta, creati un fisier text care contine urmatoarele date despre 20 de carti: 
+- titlul, 
+- numele si prenumele autorului, 
+- domeniul (tehnic/literar la cererea utilizatorului), 
+- pretul si numarul de pagini.
+
+Se va realiza un meniu prin care:
+
+a) Se vor citi datele din fisier intr-un vector de structuri de date cu campuri corespunzatoare informatiilor de retinut despre fiecare carte.
+b) Se pot introduce carti noi.
+c) Se vor lista datele despre carti, in ordine alfabetica, dupa numelui autorului.
+d) Se vor lista cartile din domeniul tehnic in ordinea crescatoare a pretului.
+e) Se va afisa titlul fiecarei carti si numarul total al cartilor cu un pret mai mic decat o suma indicata de utilizator.
+f) Se vor afisa titlurile cartilor scrise de autori ai caror nume incepe cu o litera introdusa de utilizator.
+g) Se poate opri execuția programului.
+
+Pentru rezolvarea fiecarei cerintelor a)-f) se va folosin (cel puțin) câte o funcție definită de programator.
