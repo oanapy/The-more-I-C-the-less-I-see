@@ -1,0 +1,1496 @@
+What is the value of the following integer literal? 0x8
+  -8 
+  1000 
+  the literal is invalid 
+  10 
+ 
+What is the value of the c variable at the end of the following snippet?
+
+    char c;
+    
+    c = 'a';
+    c -= ' ';
+  the assignment is invalid and causes a compilation error 
+  -A 
+  \0 
+  a 
+ 
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        double x = -.1; 
+        int i = x; 
+        printf("%d",i); 
+        return 0; 
+    }
+  the program outputs 0.100000 
+  -the program outputs 0 
+  the program outputs -0.100000 
+  the program outputs -1 
+ 
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        float x,y; 
+        int i,j; 
+        x = 1.5; y = 2.0; 
+        i = 2; j = 4; 
+        x = x * y + (float)i / j; 
+        printf("%f",x); 
+        return 0; 
+    } 
+  -the program outputs 3.500000 
+  the program outputs 3.000000 
+  the program outputs 2.000000 
+  the program outputs 4.000000 
+ 
+What happens if you try to compile and run this program? while ruleaz adoar daca e true, deci aici nu intra in while
+
+    #include <stdio.h> 
+    int main(void) { 
+        int i = 7, j = i - i; 
+        while(!i) { 
+          i /= 2; 
+          j++; 
+        } 
+        printf("%d",j); 
+        return 0; 
+    }
+  -the program outputs 0 
+  the program outputs 1 
+  the program outputs 2 
+  the program outputs 3 
+ 
+What happens if you try to compile and run this program? aici ruleaza o singura data ca apoi de vne falsa conditia din for
+
+    #include <stdio.h> 
+    int main(void) { 
+        int i, j = 0; 
+        for(i = 0; !i ; i++) 
+          j++; 
+        printf("%d",j); 
+        return 0; 
+    }
+  -the program outputs 1 
+  the program outputs 2 
+  the program outputs 3 
+  the program outputs 0 
+
+What happens if you try to compile and run this program? Binary OR Operator copies a bit if it exists in either operand.
+
+    #include <stdio.h> 
+    int main(void) { 
+        int i = 1, j = 0, k; 
+        k = i & j; 
+        k |= !!k; 
+        printf("%d",k); 
+        return 0; 
+    }
+  the program outputs 2 
+  the program outputs 1 
+  the program outputs 3 
+  -the program outputs 0 
+ 
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        int i = 1, j = 0, k; 
+        k = !i | j; 
+        k = !k; 
+        printf("%d",k); 
+        return 0; 
+    }
+  the program outputs 0 
+  the program outputs 2 
+  the program outputs 3 
+  -the program outputs 1 
+ 
+What happens if you try to compile and run this program? Binary XOR Operator copies the bit if it is set in one operand but not both.
+
+    #include <stdio.h> 
+    int main(void) { n
+        int i = 1, j = 0, k; 
+        k = (i ^ j) + (!i ^ j) + (i ^ !j) + (!i ^ !j); 
+        printf("%d",k); 
+        return 0; 
+    }
+  the program outputs 1 
+  the program outputs 0 
+  the program outputs 3 
+  -the program outputs 2 
+ 
+What happens if you try to compile and run this program? Binary Left Shift Operator. The left operands value is moved left by the number of bits specified by the right operand.
+
+    #include <stdio.h> 
+    int main(void) { 
+        int i = 0, j = 1, k; 
+        k = i << j + j << i; 
+        printf("%d",k); 
+        return 0; 
+    } 
+  -the program outputs 0 
+  the program outputs 1 
+  the program outputs 2 
+  the program outputs 3 
+
+What happens if you try to compile and run this program? switch merge pana da de break,j se modifica tot timpul in program
+
+    #include <stdio.h> 
+    int main(void) { 
+        int i = 3, j = i - 2; 
+        switch(i - 2) { 
+        case 1: j++; 
+        case 2: j++; 
+        case 0: j++; break; 
+        default:j = 0; 
+        } 
+        printf("%d",j); 
+        return 0; 
+    }
+  the program outputs 1 
+  the program outputs 2 
+  -the program outputs 4 
+  the program outputs 3 
+ 
+What happens if you try to compile and run this program? aparent nu intra deloc in switch
+
+    #include <stdio.h> 
+    #include <stdio.h> 
+    int main(void) { 
+        int i = 3, j = i - 2; 
+
+        switch(i + 2) { 
+        case 1: j++; 
+        case 2: j++; 
+        default:j = 0; 
+        case 0: j++; break; 
+        } 
+        printf("%d",j); 
+        return 0; 
+    }
+  -the program outputs 1 
+  the program outputs 4 
+  the program outputs 2 
+  the program outputs 3 
+ 
+
+What happens if you try to compile and run this program? sizeof(char) = 1
+
+    #include <stdio.h> 
+    int main(void) { 
+        char t[3]; 
+        printf("%d",sizeof(t) - sizeof(t[0])); 
+        return 0; 
+    }
+  the program outputs 1 
+  -the program outputs 2 
+  the program outputs 3 
+  the program outputs 4 
+ 
+What happens if you try to compile and run this program? sizeof(int) e 4, sizeof(int * nr elemente)
+
+    #include <stdio.h> 
+    int main(void) { 
+        int t[6]; 
+        printf("%d",sizeof(t) / sizeof(int)); 
+        return 0; 
+    }
+  the program outputs 4 
+  the program outputs 8 
+  -the program outputs 6 
+  the program outputs 2 
+ 
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        int t[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, *p = t + 4;
+        p += *p; 
+        printf("%d",*p); 
+        return 0; 
+    }
+  -the program outputs 10 
+  the program outputs 9 
+  the program outputs 7 
+  the program outputs 8 
+ 
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        int t[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, *p = t; 
+    
+        p += 2; 
+        p += p[-1]; 
+        printf("%d",*p); 
+        return 0; 
+    }
+  the program outputs 7 
+  the program outputs 3 
+  -the program outputs 5 
+  the program outputs 1 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        char s[] = "\0\1\2\3\4"; 
+
+        printf("%c",'A' + s[3]); 
+        return 0; 
+    }
+  the program outputs A 
+  the program outputs C 
+  the program outputs B 
+  -the program outputs D 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        printf("%c","ACEGIK"[3] - 1); 
+        return 0; 
+    }
+  the program outputs E 
+  the program outputs G 
+  the program outputs H 
+  -the program outputs F 
+ 
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #include <string.h> 
+    int main(void) { 
+        char s[10] = "ABCDE"; 
+
+        strcpy(s + 2, "ABCDE"); 
+        printf("%d", s[0] - s[2]); 
+        return 0; 
+    }
+  the program outputs -1 
+  the program outputs -2 
+  the program outputs 1 
+  -the program outputs 0 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #include <string.h> 
+    int main(void) { 
+        char s[10] = "CABDE"; 
+
+        strcat(s + 2, "CABDE"); 
+        printf("%d", s[0] - s[2]); 
+        return 0; 
+    } 
+  the program outputs -2 
+  the program outputs -1 
+  the program outputs 0 
+  -the program outputs 1 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #include <string.h> 
+    int main(void) { 
+        char s[10] = "ABCDE"; 
+
+        strcat(s + 2, "ABCDE"); 
+        printf("%d", s[0] - s[2]); 
+        return 0; 
+    } 
+  -the program outputs -2 
+  the program outputs 0 
+  the program outputs 1 
+  the program outputs -1 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        char s[10] = "ABCDE", *p = s + 3; 
+
+        printf("%d", p[1] - p[-1]); 
+        return 0; 
+    } 
+  -the program outputs 2 
+  the program outputs 4 
+  the program outputs 1 
+  the program outputs 3 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        char s[] = "ABCDE", *p = s + 5; 
+    
+        printf("%d", p[-1] - *(p - 4)); 
+        return 0; 
+    } 
+  -the program outputs 3 
+  the program outputs 2 
+  the program outputs 4 
+  the program outputs 1 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        char *p = "12345", *q = p - 10; 
+
+        printf("%d", q[14] - q[13]); 
+        return 0; 
+    } 
+  -the program outputs 1 
+  the program outputs 2 
+  the program outputs 4 
+  the program outputs 3 
+
+What happens if you try to compile and run this program? tpate sunt echivalente si pointeaza catre t + 3
+
+    #include <stdio.h> 
+    int main(void) { 
+        int t[] = { 1, 2, 3, 4, 5 }, *p = t; 
+
+        *p++; 
+        (*p)++; 
+        *p++; 
+        printf("%d",p[-1]); 
+        return 0; 
+    }
+  -the program outputs 3 
+  the program outputs 4 
+  the program outputs 1 
+  the program outputs 2 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        int t[1][2][2] = { { { 1, 2 }, { 3, 4 } } }; 
+        int s = 0, i, j, k; 
+
+        for(i = 1; i > 0; i -= 2) 
+          for(j = 1; j < 2; j += 2) 
+            for(k = 0; k < 3; k += 3) 
+            s += t[k][i - 1][j]; 
+        printf("%d",s); 
+        return 0; 
+    } 
+  -the program outputs 2 
+  the program outputs 3 
+  the program outputs 1 
+  the program outputs 4 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #include <stdlib.h> 
+    int main(void) { 
+        int *p = (int *)malloc(2 * sizeof(int)); 
+        *p = 2; 
+        *(p + 1) = *(p) - 1; 
+        *p = p[1]; 
+        printf("%d",*p); 
+        free(p); 
+        return 0; 
+    } 
+  the program outputs 3 
+  the program outputs 2 
+  the program outputs 4 
+  -the program outputs 1 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #include <stdlib.h> 
+    int main(void) { 
+        int t[] = { 8, 4, 2, 1 }; 
+        int *p = (int *)malloc(sizeof(t)); 
+        int i; 
+        for(i = 0; i < 4; i++) 
+          p[3 - i] = t[i]; 
+        printf("%d",*(p + 2)); 
+        free(p); 
+        return 0; 
+    }
+  the program outputs 2 
+  the program outputs 1 
+  -the program outputs 4 
+  the program outputs 3 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #include <stdlib.h> 
+    int main(void) { 
+        int i,j; 
+        int **p = (int **)malloc(2 * sizeof(int *)); 
+        p[0] = (int *)malloc(2 * sizeof(int)); 
+        p[1] = p[0]; 
+        for(i = 0; i < 2; i++) 
+          for(j = 0; j < 2; j++) 
+            p[i][j] = i + j; 
+        printf("%d",p[0][0]); 
+        return 0; 
+    }
+  the program outputs 4 
+  the program outputs 3 
+  -the program outputs 1 
+  the program outputs 2 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #include <stdlib.h> 
+    int main(void) { 
+        int i,j; 
+        int **p = (int **)malloc(2 * sizeof(int *)); 
+        p[0] = (int *)malloc(2 * sizeof(int)); 
+        p[1] = (int *)malloc(2 * sizeof(int)); 
+        for(i = 0; i < 2; i++) 
+          for(j = 0; j < 2; j++) 
+            p[i][j] = i + j; 
+        printf("%d",p[0][0]); 
+        return 0; 
+    } 
+  -the program outputs 0 
+  the program outputs 1 
+  the program outputs 3 
+  the program outputs 2 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        int *t[10]; 
+        int (*u)[10]; 
+        printf("%d",sizeof(t) != sizeof(u)); 
+        return 0; 
+    }
+  the program outputs 0 
+ -the program outputs 1 
+  the program outputs 16 
+  the program outputs 4 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        int *(t[10]); 
+        int *u[10]; 
+        printf("%d",sizeof(t) != sizeof(u)); 
+        return 0; 
+    } 
+  -the program outputs 0 
+  the program outputs 2 
+  the program outputs 1 
+  the program outputs 3 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    struct S { 
+        int S; 
+    }; 
+    int main(void) { 
+        struct S S; 
+        S.S = sizeof(struct S) / sizeof(S); 
+        printf("%d",S.S); 
+        return 0; 
+    } 
+  the program outputs 2 
+  -he program outputs 1 
+  the program outputs 4 
+  the program outputs 3 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #include <string.h> 
+    struct Q { 
+        char S[3]; 
+    }; 
+    struct S { 
+        struct Q Q; 
+    }; 
+    int main(void) { 
+        struct S S = { '\0', '\0','\0' }; 
+        S.Q.S[0] = 'A'; 
+        S.Q.S[1] = 'B'; 
+        printf("%d",strlen(S.Q.S)); 
+        return 0; 
+    }
+  the program outputs 4 
+  -the program outputs 2 
+  the program outputs 3 
+  the program outputs 1 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #include <string.h> 
+    struct Q { 
+        char S[3]; 
+    }; 
+    struct S { 
+        struct Q Q; 
+    }; 
+    int main(void) { 
+        struct S S = { '\0', '\0','\0' }; 
+        S.Q.S[0] = 'A'; 
+        S.Q.S[2] = 'B'; 
+        printf("%d",strlen(S.Q.S)); 
+        return 0; 
+    } 
+  the program outputs 2 
+  the program outputs 4 
+  the program outputs 3 
+  -the program outputs 1 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    struct Q { 
+        int a,b,c; 
+    }; 
+    struct S { 
+        int a,b,c; 
+        struct Q Q; 
+    }; 
+    int main(void) { 
+        struct Q Q = { 3,2,1 }; 
+        struct S S = { 4,5,6 }; 
+        S.Q = Q; 
+        printf("%d",S.b - S.Q.b); 
+        return 0; 
+    } 
+  the program outputs 2 
+  the program outputs 4 
+  -the program outputs 3 
+  the program outputs 1 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #include <stdlib.h> 
+    struct S { 
+        int     a; 
+        struct S *b; 
+    }; 
+    int main(void) { 
+        struct S *x = (struct S*) malloc(sizeof(struct S)); 
+        struct S *y = (struct S*) malloc(sizeof(struct S)); 
+        x->a = 2; 
+        x->b = y; 
+        y->a = 4; 
+        y->b = x; 
+        printf("%d",x->b->b->b->a); 
+        free(x); free(y);
+        return 0; 
+    }
+  the program outputs 3 
+  the program outputs 2 
+  the program outputs 1 
+  -the program outputs 4 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #include <stdlib.h> 
+    struct S { 
+        int     a; 
+        struct S *b; 
+    }; 
+    int main(void) { 
+        struct S *x = (struct S*) malloc(sizeof(struct S)); 
+        struct S *y = (struct S*) malloc(sizeof(struct S)); 
+        struct S *p; 
+        x->a = 2; x->b = y; 
+        y->a = 4; y->b = x; 
+        p = x; 
+        p = p->b->b->b->b; 
+        printf("%d",p->a); 
+        return 0; 
+    } 
+  the program outputs 1 
+  the program outputs 3 
+  the program outputs 4 
+  -the program outputs 2 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    struct S { 
+        int a[2]; 
+    }; 
+    int main(void) { 
+        struct S S[2]; 
+        int i; 
+        for(i = 0; i < 2; i++) 
+          S[i].a[1-i] = 4 * !i; 
+        printf("%d",S[0].a[1]); 
+        return 0; 
+    }
+  the program outputs 1 
+  the program outputs 2 
+  the program outputs 3 
+  -the program outputs 4 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    struct S { 
+        char *p; 
+    }; 
+    int main(void) { 
+        char *p = "abcd"; 
+        struct S S[2]; 
+        int i; 
+        for(i = 0; i < 2; i++) 
+          S[i].p = p + i; 
+        printf("%c",S[1].p[0]); 
+        return 0; 
+    } 
+  -the program outputs b 
+  the program outputs a 
+  the program outputs d 
+  the program outputs c 
+
+What happens if you try to compile and run this program?
+
+    void f(void) { 
+    } 
+    int main(void) { 
+        int i; 
+        i = f(); 
+        printf("%d",i); 
+        return 0; 
+    }
+  the program outputs nul 
+  the program outputs 0 
+  -compilation fails 
+  the program outputs NULL 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int f(void) { 
+    } 
+    int main(void) { 
+        int i; 
+        i = f(); 
+        printf("%d",i); 
+        return 0; 
+    }
+  the program outputs NULL 
+  the program outputs an unpredictable value 
+  -the program outputs 0 
+  the compilation fails 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    void f(int i) { 
+        i++; 
+    } 
+    int main(void) { 
+        int i = 1; 
+        f(i); 
+        printf("%d",i); 
+        return 0; 
+    }
+  the program outputs 2 
+  -the program outputs 1 
+  the program outputs an unpredictable value 
+  the compilation fails 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int f(int i) {
+       ++i;
+        return i; 
+    } 
+    int main(void) { 
+        int i = 1; 
+        i = f(i); 
+        printf("%d",i); 
+        return 0; 
+    }
+  the compilation fails 
+  the program outputs an unpredictable value 
+  the program outputs 1 
+  -the program outputs 2 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        int i = 0; 
+        { 
+            int i = 1; 
+            main.i = i; 
+        } 
+        printf("%d",i); 
+        return 0; 
+    }
+  the program outputs 2 
+  the program outputs 1 
+  the program outputs 0 
+  -compilations fails 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int i = 0; 
+    void f(void) { 
+        int i = 1; 
+    } 
+    int main(void) { 
+        int i = 2; 
+        f(); 
+        printf("%d",i); 
+        return 0; 
+    } 
+  the program outputs 1 
+  the compilation fails 
+  -the program outputs 2 
+  the program outputs 0 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int i = 0; 
+    void f(void) { 
+        int i = 1; 
+    } 
+    int main(void) { 
+        f(); 
+        printf("%d",i); 
+        return 0; 
+    } 
+  the program outputs 1 
+  -the program outputs 0 
+  the compilation fails 
+  the program outputs 2 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int i = 1; 
+    int *f(void) { 
+        return &i; 
+    } 
+    int main(void) { 
+        int i = 0; 
+        i = *f(); 
+        printf("%d",i); 
+        return 0; 
+    }
+  the program outputs 0 
+  the compilation fails 
+  the program outputs 2 
+  -the program outputs 1 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int i = 2; 
+    int *f(void) { 
+        return &i; 
+    } 
+    int main(void) { 
+        int *i; 
+        i = f(); 
+        printf("%d",++(*i)); 
+        return 0; 
+    }
+  the program outputs 1 
+  the compilation fails 
+  -the program outputs 3 
+  the program outputs 2 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int i = 0; 
+    int *f(int *i) { 
+        (*i)++; 
+        return i; 
+    } 
+    int main(void) { 
+        int i = 1; 
+        i = *f(&i); 
+        printf("%d",i); 
+        return 0; 
+    }
+  the compilation fails 
+  the program outputs 1 
+  the program outputs 0 
+  -the program outputs 2 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    struct S { 
+        int S; 
+    }; 
+    int f(struct S s) { 
+        return --s.S; 
+    } 
+    int main(void) { 
+        int i; 
+        struct S S = { 2 }; 
+        i = f(S); 
+        printf("%d",i); 
+        return 0; 
+    }
+  the program outputs 2 
+  -the program outputs 1 
+  the program outputs 0 
+  the compilation fails 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    struct S { 
+        int S; 
+    }; 
+    int f(struct S *s) { 
+        return --s.S; 
+    } 
+    int main(void) { 
+        int i; 
+        struct S S = { 2 }; 
+        i = f(S); 
+        printf("%d",i); 
+        return 0; 
+    } 
+  the program outputs 1 
+  the program outputs 0 
+  the program outputs 2 
+  -compilation fails 
+ 
+IncorrectQuestion 14
+0 / 1 pts
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int f(int t[\]) { 
+        return t[0\] + t[2\]; 
+    } 
+    int main(void) { 
+        int i,a[\] = { -2,-1,0,1,2 }; 
+        i = f(a + 2); 
+        printf("%d",i); 
+        return 0; 
+    } 
+  the program outputs 0 
+  the compilation fails 
+  the program outputs 1 
+  the program outputs 2 
+ 
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int f(int t[\][\]) { 
+        return t[0\][0\] + t[1\][0\]; 
+    } 
+    int main(void) { 
+        int i,a[2\][2\] = { {-2,-1},{1,2} }; 
+        i = f(a + 2); 
+        printf("%d",i); 
+        return 0; 
+    }
+  the program outputs 1 
+  the program outputs 2 
+  -the compilation fails 
+  the program outputs 0 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int f(int t[2\][\]) { 
+        return t[0\][0\] + t[1\][0\]; 
+    } 
+    int main(void) { 
+        int i,a[2\][2\] = { {-2,-1},{1,2} }; 
+        i = f(a + 2); 
+        printf("%d",i); 
+        return 0; 
+    }
+  -the compilation fails 
+  the program outputs 1 
+  the program outputs 2 
+  the program outputs 0 
+ 
+IncorrectQuestion 17
+0 / 1 pts
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int f(char t[\]) { 
+        return t[1\] - t[0\]; 
+    } 
+    int main(void) { 
+        int i = 2; 
+        i -= f("ABDGK" + 1); 
+        printf("%d",i); 
+        return 0; 
+    } 
+  the program outputs 2 
+  the program outputs 0 
+  the program outputs 1 
+  the compilation fails 
+ 
+IncorrectQuestion 18
+0 / 1 pts
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int f(char t[\]) { 
+        return t[0\] - t[-1\]; 
+    } 
+    int main(void) { 
+        int i = 2; 
+        i -= f("ABDGK" + 1); 
+        printf("%d",i); 
+        return 0; 
+    }
+  the program outputs 1 
+  the program outputs 0 
+  the program outputs 2 
+  the compilation fails 
+ 
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #include <string.h> 
+    void f(char *s,int i) { 
+        *(s + i) = '\0'; 
+    } 
+    int main(void) { 
+        char a[\] = { 'a','b','c','d' }; 
+        f(a[1\],1); 
+        printf("%d",strlen(a)); 
+        return 0; 
+    }
+  the program outputs 0 
+  -the compilation fails 
+  the program outputs 2 
+  the program outputs 1 
+ 
+IncorrectQuestion 20
+0 / 1 pts
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #include <string.h> 
+    void f(char *s,int i) { 
+        *(s + i) = '\0'; 
+    } 
+    int main(void) { 
+        char a[\] = { 'a','b','c','d' }; 
+        f(a+1,1); 
+        printf("%d",strlen(a)); 
+        return 0; 
+    } 
+  the program outputs 2 
+  the compilation fails 
+  the program outputs 0 
+  the program outputs 1 
+
+What happens if you try to compile and run this program?
+
+    int main(void) { 
+        FILE *f; 
+        f = fopen("file","wb"); 
+        printf("%d",f != NULL); 
+        fclose(f); 
+        return 0; 
+    }
+  -the compilation fails 
+  the program outputs 1 
+  the program outputs 0 
+  the execution fails 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        FILE f; 
+        f = fopen("file","wb"); 
+        printf("%d",f != NULL); 
+        fclose(f); 
+        return 0; 
+    }
+  the program outputs 0 
+  the program outputs 1 
+  the execution fails 
+  -the compilation fails 
+
+What happens if you try to compile and run this program assuming that fopen() succeeds?
+
+    #include <stdio.h> 
+    int main(void) { 
+        FILE *f; 
+        f = fopen("file","wb"); 
+        printf("%d",f != NULL); 
+        fclose(f); 
+        return 0; 
+    }
+  the program outputs 2 
+  -the program outputs 1 
+  the program outputs 0 
+  the compilation or execution fails 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        int i; 
+        i = fprintf(stdin,"Hello!"); 
+        printf("%d",i == EOF); 
+        return 0; 
+    }
+  -the program outputs 1 
+  the compilation or execution fails 
+  the program outputs 0 
+  the program outputs 2 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        int i; 
+        i = fprintf(stderr,"Hello!"); 
+        printf("%d",i == EOF); 
+        return 0; 
+    }
+  the compilation or execution fails 
+  the program outputs 1 to the stdout stream 
+  -the program outputs 0 to the stdout stream 
+  the program outputs 2 to the stdout stream 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        FILE *f; 
+        int i = fprintf(f,"Hello!"); 
+        printf("%d",i == EOF); 
+        return 0; 
+    }
+  the program outputs 2 
+  -the compilation or execution fails 
+  the program outputs 0 
+  the program outputs 1 
+
+What happens if you try to compile and run this program assuming that fopen() succeeds?
+
+    #include <stdio.h> 
+    int main(void) { 
+        FILE *f = fopen("file","w"); 
+        int i = fprintf(f,"Hello!"); 
+        printf("%d",i != EOF); 
+        return 0; 
+    }
+  -the program outputs 1 
+  the compilation or execution fails 
+  the program outputs 2 
+  the program outputs 0 
+
+What happens if you try to compile and run this program assuming that fopen() succeeds?
+
+    #include <stdio.h> 
+    int main(void) { 
+        FILE *f = fopen("file","w"); 
+        int i = fputs(f,"Hello!"); 
+        printf("%d",i != EOF); 
+        fclose(f);
+        return 0; 
+    }
+  -the compilation or execution fails 
+  the program outputs 2 
+  the program outputs 0 
+  the program outputs 1 
+
+What happens if you try to compile and run this program assuming that fopen() succeeds?
+
+    #include <stdio.h> 
+    int main(void) { 
+        FILE *f = fopen("file","w"); 
+        int i = fputs("Hello!",f); 
+        printf("%d",i != EOF); 
+        return 0; 
+    }
+  the program outputs 2 
+  the compilation or execution fails 
+  -the program outputs 1 
+  the program outputs 0 
+
+What happens if you try to compile and run this program assuming that fopen() succeeds?
+
+    #include <stdio.h> 
+    int main(void) { 
+        char s[20]; 
+        FILE *f = fopen("file","w"); 
+        int i = fputs("12A",f); 
+        fclose(f); 
+        f = fopen("file","r"); 
+        fgets(s,2,f); 
+        puts(s); 
+        fclose(f); 
+        return 0; 
+    }
+  -the program outputs 1 
+  the program outputs 12A 
+  the compilation or execution fails 
+  the program outputs 12 
+
+What happens if you try to compile and run this program assuming that fopen() succeeds?
+
+    #include <stdio.h> 
+    int main(void) { 
+        char s[20]; 
+        FILE *f = fopen("file","w"); 
+        int i = fputs("12A",f); 
+        fclose(f); 
+        f = fopen("file","r"); 
+        fgets(s,20,f); 
+        puts(s); 
+        fclose(f); 
+        return 0; 
+    }
+  the program outputs 1 
+  -the program outputs 12A 
+  the program outputs 12 
+  the compilation or execution fails 
+
+What happens if you try to compile and run this program assuming that fopen() succeeds?
+
+    #include <stdio.h> 
+    int main(void) { 
+        FILE *f = fopen("file","w"); 
+        int i; 
+        fputs("12A",f); 
+        fclose(f); 
+        f = fopen("file","r"); 
+        fseek(f,0,SEEK_END); 
+        i = ftell(f); 
+        fclose(f); 
+        printf("%d",i); 
+        return 0; 
+    }
+  -the program outputs 3 
+  the compilation or execution fails 
+  the program outputs 2 
+  the program outputs 1 
+
+What happens if you try to compile and run this program assuming that fopen() succeeds?
+
+    #include <stdio.h> 
+    int main(void) { 
+        FILE *f = fopen("file","w"); 
+        int i; 
+        fputs("12A",f); 
+        fclose(f); 
+        f = fopen("file","r"); 
+        fseek(f); 
+        i = ftell(f,0,SEEK_END); 
+        fclose(f); 
+        printf("%d",i); 
+        return 0; 
+    } 
+  -the compilation or execution fails 
+  the program outputs 2 
+  the program outputs 3 
+  the program outputs 1 
+
+What happens if you try to compile and run this program assuming that fopen() succeeds?
+
+    #include <stdio.h> 
+    int main(void) { 
+        FILE *f = fopen("file","w"); 
+        int i; 
+        fputs("12A",f); 
+        fclose(f); 
+        f = fopen("file","r"); 
+        fscanf(f,"%d",&i); 
+        fclose(f); 
+        printf("%d",i); 
+        return 0; 
+    }
+  the program outputs 12A 
+  -the program outputs 12 
+  the program outputs 1 
+  the compilation or execution fails 
+
+What happens if you try to compile and run this program assuming that fopen() succeeds?
+
+    #include <stdio.h> 
+    int main(void) { 
+        FILE *f = fopen("file","w"); 
+        char c; 
+        fputs("12A",f); 
+        fclose(f); 
+        f = fopen("file","r"); 
+        fscanf(f,"%c",&c); 
+        fclose(f); 
+        printf("%c",c); 
+        return 0; 
+    }
+  the program outputs 12 
+  the program outputs 12A 
+  the compilation or execution fails 
+  -the program outputs 1 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        FILE *f = fopen("file","w"); 
+        float f; 
+        fputs("12A",f); 
+        fclose(f); 
+        f = fopen("file","r"); 
+        fscanf(f,"%f",&f); 
+        fclose(f); 
+        printf("%f",f); 
+        return 0; 
+    } 
+  the program outputs 0.000000 
+  -the compilation or execution fails 
+  the program outputs 12.0000000 
+  the program outputs 1.000000 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #define ALPHA -1-2 
+    int main(void) { 
+        int i = -1; 
+        i = i * ALPHA; 
+        printf("%d",i); 
+        return 0; 
+    }
+  the program outputs 0 
+  -the program outputs -1 
+  the program outputs -3 
+  the program outputs -2 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #define ALPHA (-1-2) 
+    int main(void) { 
+        int i = -1; 
+        i = -i * ALPHA; 
+        printf("%d",i); 
+        return 0; 
+    }
+  the program outputs -1 
+  the program outputs -2 
+  the program outputs 0 
+  -the program outputs -3 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #define ALPHA -1 
+    #define   BETA       - ALPHA 
+    int main(void) { 
+        int i = ALPHA + BETA * ALPHA * BETA; 
+        printf("%d",i); 
+        return 0; 
+    } 
+  the program outputs -3 
+  the program outputs 0 
+  the program outputs -1 
+ -the program outputs -2 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #define ALPHA(x)  -x 
+    int main(void) { 
+        int i = ALPHA(2-1); 
+        printf("%d",i); 
+        return 0; 
+    } 
+  the program outputs -2 
+  -the program outputs -3 
+  the program outputs 0 
+  the program outputs -1 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #define ALPHA(x)  2*-x 
+    int main(void) { 
+        int i = ALPHA((1-1)); 
+        printf("%d",i); 
+        return 0; 
+    }
+  the program outputs -3 
+  the program outputs -2 
+  the program outputs -1 
+  -the program outputs 0 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #define ALPHA(x,y)  x##2-y 
+    int main(void) { 
+        int i = -1; 
+        int i2 = -2; 
+        printf("%d",ALPHA(i,i2)); 
+        return 0; 
+    }
+  the program outputs -2 
+  -the program outputs 0 
+  the program outputs -1 
+  the program outputs -3 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #define ALPHA(x,y)  x+y 
+    int main(void) { 
+        int i = -1; 
+        int i2 = -2; 
+        printf("%d",-ALPHA(i,i2)); 
+        return 0; 
+    } 
+  the program outputs -2 
+  the program outputs 0 
+  -the program outputs -1 
+  the program outputs -3 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #define A(x)  ((x)?-1:0) 
+    int main(void) { 
+        int i = 2; 
+        int i2 = A(i) * i; 
+        printf("%d",i2); 
+        return 0; 
+    }
+  the program outputs 0 
+  -the program outputs -2 
+  the program outputs -3 
+  the program outputs -1 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #define A(x)  ((x)?-1:0) 
+    #define B(a)  !(a) 
+    int main(void) { 
+        int i = 2; 
+        int i2 = A(B(i)); 
+        printf("%d",i2); 
+        return 0; 
+    } 
+  -the program outputs 0 
+  the program outputs -3 
+  the program outputs -2 
+  the program outputs -1 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #define A(x)  #x 
+    int main(void) { 
+        int i = -1; 
+        char *s = A(i); 
+        i = -(s[0] == 'i'); 
+        printf("%d",i); 
+        return 0; 
+    }
+  the program outputs -2 
+  the program outputs -3 
+  the program outputs 0 
+  -the program outputs -1 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #define X   1 
+    #define Y 2 
+
+    int main(void) { 
+        int i = 
+    #if X<<Y > 0 
+        -X 
+    #else 
+        -Y 
+    #endif 
+        ; 
+        printf("%d",i); 
+        return 0; 
+    }
+  -the program outputs -1 
+  the program outputs -2 
+  the program outputs -3 
+  the program outputs 0 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    #define X   1 
+    #define Y 2 
+
+    int main(void) { 
+        int i = 
+    #if X>>Y > 0 
+        -X 
+    #else 
+        -Y 
+    #endif 
+        ; 
+        printf("%d",i); 
+        return 0; 
+    }
+  the program outputs 0 
+  -the program outputs -2 
+  the program outputs -1 
+  the program outputs -3 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+    int main(void) { 
+        int X = 1; 
+    #define X 1 
+        int Y = X - 2; 
+    #undef X 
+        printf("%d",Y+X); 
+        return 0; 
+    }
+  the program outputs -3 
+  the program outputs -2 
+  -the program outputs 0 
+  the program outputs -1 
+
+What happens if you try to compile and run this program?
+
+    #include <stdio.h> 
+
+    int main(void) { 
+    #undef X 
+        int X = 1; 
+        int Y = X - 2; 
+    #define X -2 
+        printf("%d",Y+X); 
+        return 0; 
+    }
+  the program outputs 0 
+  -the program outputs -3 
+  the program outputs -1 
+  the program outputs -2 
