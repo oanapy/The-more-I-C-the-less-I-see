@@ -21,8 +21,9 @@ Pentru rezolvarea fiecarei cerintelor a)-f) se va folosin (cel puțin) câte o f
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
-struct BIBLIOTECA {
+struct BIBLIOTECA { //declaratie structura Biblioteca
 	char titlu[200];
 	char nume_autor[25];
 	char prenume_autor[25];
@@ -31,35 +32,34 @@ struct BIBLIOTECA {
 	int nr_pagini;
 };
 
-int optiuni_meniu();
-void incarcare_date(struct BIBLIOTECA *b, int nr_carti, FILE * fisier_biblioteca);
-void afisare_date(struct BIBLIOTECA *b, int nr_carti);
-void adaugare_carte();
-void sortare_alfabetica(struct BIBLIOTECA *b, int nr_carti);
-void sortare_pret(struct BIBLIOTECA *b, int nr_carti);
+int optiuni_meniu(); //introduce optiunile din meniu
+void incarcare_date(struct BIBLIOTECA *b, int nr_carti, FILE * fisier_biblioteca); //incarca datele in structura
+void afisare_date(struct BIBLIOTECA *b, int nr_carti); //afiseaza datele din structura
+void adaugare_carte(); //adauga elemente noi in structura
+void sortare_alfabetica(struct BIBLIOTECA *b, int nr_carti); //sorteaza alfabetic elementele din structura
+void sortare_pret(struct BIBLIOTECA *b, int nr_carti); //sorteaza dupa pret elementele din structura
+void mai_mic_decat(struct BIBLIOTECA *b, int nr_carti); //filtreaza elementele din structura dupa un criteriu de pret
+void autori_litera(struct BIBLIOTECA *b, int nr_carti); //filtreaza elementele din structura dupa un criteriu de litera
 
 void main() {
-	int alegere;
-	alegere = optiuni_meniu();
-
-	int nr;
-	nr = 0;
-	FILE *fisier_biblioteca = fopen("carti.txt", "r");
-	int i;
+	int alegere, nr;
+	alegere = optiuni_meniu(); //retine numarul asociat optiunii alese de utilizator
+	nr = 0; //initializare nr de carti
+	FILE *fisier_biblioteca = fopen("carti.txt", "r"); //deschide fisierul si il mentine disponibil la o adresa intuitiva
+	int i; //initializare contor
 	if (!fisier_biblioteca) {
 		printf("Nu s-a putut deschide fisierul inregistari \n");
 	}
 	else {
 
-		fscanf(fisier_biblioteca, "%d", &nr);
+		fscanf(fisier_biblioteca, "%d", &nr); //muta cursorul dupa primul rand
 		//printf("Nr de carti este %d\n", nr);
-		struct BIBLIOTECA *b = malloc(nr * sizeof(struct BIBLIOTECA));
-
+		struct BIBLIOTECA *b = malloc(nr * sizeof(struct BIBLIOTECA)); //aloca memorie variabilei care pointeaza catre o structura
 		printf("Ai ales optiunea %d\n", alegere);
+		incarcare_date(b, nr, fisier_biblioteca);
 		switch (alegere) {
 		case 1:
 			printf("Se incarca datele din fisier...\n");
-			incarcare_date(b, nr, fisier_biblioteca);
 			printf("Datele au fost incarcate\n");
 			afisare_date(b, nr);
 			break;
@@ -70,23 +70,21 @@ void main() {
 			break;
 		case 3:
 			printf("Se citeste fisierul...\n");
-			incarcare_date(b, nr, fisier_biblioteca);
 			sortare_alfabetica(b, nr);
 			afisare_date(b, nr);
 			break;
 		case 4:
 			printf("Cartile se sorteaza...\n");
-			incarcare_date(b, nr, fisier_biblioteca);
 			sortare_pret(b, nr);
 			printf("Cartile au fost sortate dupa pret\n");
 			break;
-
-		//TODO
 		case 5:
-			printf("Ati intrat in cazul 1.\n");
+			printf("Datele au fost incarcate...\n");
+			mai_mic_decat(b, nr);
 			break;
 		case 6:
-			printf("Ati intrat in cazul 1.\n");
+			printf("Datele au fost incarcate...\n");
+			autori_litera(b, nr);
 			break;
 		case 7:
 			printf("Ati iesit din biblioteca\n");
@@ -135,7 +133,7 @@ void afisare_date(struct BIBLIOTECA *b, int nr_carti) {
 				printf("Titlu: %s \n", b[i].titlu);
 				printf("Nume autor: %s \n", b[i].nume_autor);
 				printf("Prenume autor: %s \n", b[i].prenume_autor);
-				printf("Pret: %f\n", b[i].pret);
+				printf("Pret: %0.2f\n", b[i].pret);
 				printf("Pagini: %d\n", b[i].nr_pagini);
 				printf("\n");
 			}
@@ -154,7 +152,7 @@ void afisare_date(struct BIBLIOTECA *b, int nr_carti) {
 				printf("Pagini: %d\n", b[i].nr_pagini);
 				printf("\n");
 			}
-		} 
+		}
 		break;
 	}
 }
@@ -187,7 +185,7 @@ void adaugare_carte() {
 		fprintf(fisier_biblioteca, "%s\n", carte_noua.domeniu);
 		printf("Pret: ");
 		scanf("%f", &carte_noua.pret);
-		fprintf(fisier_biblioteca, "%f\n", carte_noua.pret);
+		fprintf(fisier_biblioteca, "%0.2f\n", carte_noua.pret);
 		printf("Nr pagini: ");
 		scanf("%d", &carte_noua.nr_pagini);
 		fprintf(fisier_biblioteca, "%d\n", carte_noua.nr_pagini);
@@ -242,4 +240,31 @@ void sortare_pret(struct BIBLIOTECA * b, int nr_carti) {
 		}
 	}
 	printf("\n");
+}
+
+void mai_mic_decat(struct BIBLIOTECA *b, int nr_carti) {
+	float n;
+	int i, total;
+	total = 0;
+	printf("Introdu un pret de comparatie: \n");
+	scanf("%f", &n);
+	for (i = 0; i < nr_carti - 1; i++) {
+		if (b[i].pret < n) {
+			printf("%s\n", b[i].titlu);
+			total++;
+		}
+	}
+	printf("Totalul cartilor cu pret mai mic decat %0.2f este %d \n", n, total);
+}
+
+void autori_litera(struct BIBLIOTECA *b, int nr_carti) {
+	char litera;
+	printf("Introdu o litera dupa care doresti filtrarea: \n");
+	scanf("%s", &litera);
+	int i;
+	for (i = 0; i < nr_carti; i++) {
+		if (b[i].nume_autor[0] == toupper(litera)) {
+			printf("%s\n", b[i].titlu);
+		}
+	}
 }
